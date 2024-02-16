@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   notes: [
@@ -8,26 +8,28 @@ const initialState = {
     { id: 4, note: 'Reducers should only make immutable updates' },
     { id: 5, note: 'Reducers should be pure functions' },
   ],
-};
+}
 
 const options = {
   name: 'notes',
   initialState,
   reducers: {
     addNote: (state, action) => {
-      state.notes.push({ id: state.notes.length + 1, note: action.payload });
+      state.notes.push({ id: state.notes.length + 1, note: action.payload })
     },
     removeNote: (state, action) => {
       state.notes.splice(
         state.notes.findIndex((note) => note.id === action.payload),
         1
-      );
+      )
     },
   },
-};
+}
 
-const notesSlice = createSlice(options);
+const notesSlice = createSlice(options)
 
-export const { addNote, removeNote } = notesSlice.actions;
+export const { addNote, removeNote } = notesSlice.actions
 
-export default notesSlice.reducer;
+export default notesSlice.reducer
+
+export const selectAllNotes = (state) => state.notes.notes
