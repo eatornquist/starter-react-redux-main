@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { removeNote, selectAllNotes } from '../notes.slice'
+import { removeNote, selectFilteredNotes } from '../notes.slice'
 
 export default function NotesList() {
-  const notes = useSelector(selectAllNotes)
+  const notes = useSelector(selectFilteredNotes)
   const dispatch = useDispatch()
 
   function handleDeleteButtonClick(id) {
