@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
 export default function CreateNote() {
-  const [note, setNote] = useState('');
+  const [note, setNote] = useState('')
 
   function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
   }
 
   function handleChange({ target: { value } }) {
-    setNote(value);
+    setNote(value)
   }
 
   return (
@@ -24,5 +24,5 @@ export default function CreateNote() {
       />
       <input type="submit" />
     </form>
-  );
+  )
 }
